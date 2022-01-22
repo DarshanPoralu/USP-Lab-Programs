@@ -1,27 +1,27 @@
-#include&lt;stdio.h&gt;
-#include&lt;sys/types.h&gt;
-#include&lt;unistd.h&gt;
-#include&lt;string.h&gt;
+#include<stdio.h>
+#include<sys/types.h>
+#include<unistd.h>
+#include<string.h>
 int main(int argc, char * argv[])
 {
-if(argc &lt; 3 || argc &gt; 4 || (argc == 4 &amp;&amp; strcmp(argv[1],”-s”)))
+if(argc < 3 || argc > 4 || (argc == 4 && strcmp(argv[1],”-s”)))
 {
-printf(“Usage: ./a.out [-s] &lt;org_file&gt; &lt;new_link&gt;\n”);
+printf("Usage: ./a.out [-s] <org_file> <new_link>\n");
 return 1;
 }
 if(argc == 4)
 {
 if((symlink(argv[2], argv[3])) == -1)
-printf(“Cannot create symbolic link\n”) ;
+printf("Cannot create symbolic link\n");
 else
-printf(“Symbolic link created\n”) ;
+printf("Symbolic link created\n") ;
 }
 else
 {
 if((link(argv[1], argv[2])) == -1)
-printf(“Cannot create hard link\n”) ;
+printf("Cannot create hard link\n") ;
 else
-printf(“Hard link created\n”) ;
+printf("Hard link created\n") ;
 }
 return 0;
 }
