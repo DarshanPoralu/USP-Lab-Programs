@@ -1,10 +1,10 @@
-#include&lt;stdio.h&gt;
+#include<stdio.h>
 int main(int argc, char* argv[ ])
 {
 int i;
 char **ptr;
 extern char **environ;
 for( ptr = environ; *ptr != 0; ptr++ ) /*echo all env strings*/
-printf(&quot;%s\n&quot;, *ptr);
+printf("%s\n", *ptr);
 return 0;
 }
